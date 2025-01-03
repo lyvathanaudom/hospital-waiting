@@ -1,7 +1,6 @@
-<!-- components/Header.vue -->
 <template>
-  <header class="fixed bg-white left-0 right-0 py-4 px-[5%] ">
-    <nav class=" mx-auto flex justify-between items-center">
+  <header class="fixed bg-white left-0 right-0 py-4 px-[5%]">
+    <nav class="mx-auto flex justify-between items-center">
       <div class="font-bold text-lg">YOUR WEBSITE</div>
       <div class="flex items-center gap-4 sm:gap-10">
         <!-- Desktop Navigation Links -->
@@ -39,7 +38,7 @@
 
       <!-- Mobile Navigation Links -->
       <div
-        :class="{'hidden': !isMenuOpen, 'flex': isMenuOpen}"
+        :class="{ 'hidden': !isMenuOpen, 'flex': isMenuOpen }"
         class="flex-col fixed sm:hidden gap-4 items-center bg-white shadow-md left-0 right-0 top-16 h-full py-10"
       >
         <nuxt-link to="/" class="text-lg text-gray-500 hover:text-blue-500">Home</nuxt-link>
@@ -51,21 +50,13 @@
   </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isMenuOpen: false,
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-  },
-};
-</script>
+<script setup lang="ts">
 
-<style scoped>
-/* Add any additional styles here */
-</style>
+// Define a reactive variable for menu state
+const isMenuOpen = ref(false);
+
+// Function to toggle the menu state
+function toggleMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
+</script>
