@@ -1,4 +1,3 @@
-<!-- components/HeroSection.vue -->
 <template>
   <section class="py-6">
     <div
